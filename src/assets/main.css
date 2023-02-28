@@ -4,6 +4,7 @@
 
 body {
   font-family: "Barlow", sans-serif;
+  color: black;
   /* background-image: linear-gradient(-134deg,#638892 0%,#2e5965 100%); */
   background-image: linear-gradient(-134deg, #002768 0%, #0f3c85 100%);
 }
