@@ -1,0 +1,9 @@
+@import "./base.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap");
+
+body {
+  font-family: "Barlow", sans-serif;
+  /* background-image: linear-gradient(-134deg,#638892 0%,#2e5965 100%); */
+  background-image: linear-gradient(-134deg, #002768 0%, #0f3c85 100%);
+}
