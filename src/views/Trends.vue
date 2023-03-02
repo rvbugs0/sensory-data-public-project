@@ -1,168 +1,219 @@
 <script setup>
-import * as echarts from "echarts";
 
-import { ref, onMounted, onUnmounted } from "vue";
+import { RouterLink } from "vue-router";
 
-const myChart = ref(0);
-const option = ref({
-  xAxis: {
-    type: "category",
-    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  },
-  yAxis: {
-    type: "value",
-  },
-  series: [
-    {
-      data: [120, 200, 150, 80, 70, 110, 130],
-      type: "line",
-      symbol: "triangle",
-      symbolSize: 20,
-      lineStyle: {
-        color: "#5470C6",
-        width: 4,
-        type: "dashed",
-      },
-      itemStyle: {
-        borderWidth: 3,
-        borderColor: "#EE6666",
-        color: "yellow",
-      },
-    },
-  ],
-});
 
-function initializeChart() {
-  let chartDom = document.getElementById("chart");
-
-  myChart.value = echarts.init(chartDom);
-  option.value && myChart.value.setOption(option.value);
-}
-
-onMounted(() => {
-  initializeChart();
-});
-
-onUnmounted(() => {
-  echarts.dispose(myChart.value);
-});
 </script>
 
 <template>
-  <div class="home">
-    <div id="left">
-      <p class="awesome center">Trends:</p>
+  <div class="bg">
 
-      <br />
-      <div id="chart"></div>
-    </div>
-    <div id="right">
-      <p class="awesome">Info:</p>
-      <p class="medium-heading">Sea water temperature</p>
-      <br />
-      <div class="facts">
-        <p class="info">
-          The ocean absorbs most of the excess heat from greenhouse gas
-          emissions, leading to rising ocean temperatures.
-        </p>
-        <p class="info">
-          Increasing ocean temperatures affect marine species and ecosystems,
-          causing coral bleaching and the loss of breeding grounds for marine
-          fishes and mammals.
-        </p>
-        <p class="info">
-          Rising ocean temperatures also affect the benefits humans derive from
-          the ocean; threatening food security, increasing the prevalence of
-          diseases, causing more extreme weather events and the loss of coastal
-          protection.
-        </p>
 
-        <p class="info">
-          Achieving the mitigation targets set by the Paris Agreement on climate
-          change and limiting the global average temperature increase to well
-          below 2°C above pre-industrial levels is crucial to prevent the
-          massive, irreversible impacts of ocean warming.
-        </p>
-        <p class="info">
-          Establishing marine protected areas and putting in place adaptive
-          measures, such as precautionary catch limits to prevent overfishing,
-          can protect ocean ecosystems and shield humans from the effects of
-          ocean warming.
-        </p>
+    <div class="main">
+      <header>
+        <!-- <h1>Cool Articles</h1> -->
+        <br>
+      </header>
+      <div class="band">
+
+
+        <div class="item">
+          <RouterLink to="/trend_detail" class="card">
+            <div class="thumb" style="background-image: url('./images/air.webp');"></div>
+            <article>
+              <h1>Air & Climate</h1>
+              <!-- <span>...</span> -->
+            </article>
+          </RouterLink>
+        </div>
+        <div class="item">
+          <RouterLink to="/trend_detail" class="card">
+            <div class="thumb" style="background-image: url('./images/biodiversity.jpeg');">
+            </div>
+            <article>
+              <h1>Biodiversity</h1>
+              <!-- <span>Melody Nieves</span> -->
+            </article>
+          </RouterLink>
+        </div>
+        <div class="item">
+          <RouterLink to="/trend_detail" class="card">
+            <div class="thumb" style="background-image: url('./images/energy.jpeg');"></div>
+            <article>
+              <h1>Energy & Minerals</h1>
+              <!-- <span>Kezz Bracey</span> -->
+            </article>
+          </RouterLink>
+        </div>
+        <div class="item">
+          <RouterLink to="/trend_detail" class="card">
+            <div class="thumb" style="background-image: url('./images/forest.jpeg');"></div>
+            <article>
+              <h1>Forests</h1>
+              <!-- <span>Rose</span> -->
+            </article>
+          </RouterLink>
+        </div>
+        <div class="item">
+          <RouterLink to="/trend_detail" class="card">
+            <div class="thumb" style="background-image: url('./images/water-resources.jpeg');">
+            </div>
+            <article>
+              <h1>Inland Water Resources</h1>
+
+              <!-- <span>Marie Gardiner</span> -->
+            </article>
+          </RouterLink>
+        </div>
+        <div class="item">
+          <RouterLink to="/trend_detail" class="card">
+            <div class="thumb" style="background-image: url('./images/agriculture.png');">
+            </div>
+            <article>
+              <h1>Land & Agriculture</h1>
+              <!-- <span>Kendra Schaefer</span> -->
+            </article>
+          </RouterLink>
+        </div>
+
+        <div class="item">
+          <RouterLink to="/trend_detail" class="card">
+            <div class="thumb" style="background-image:url('./images/ocean.jpeg')">
+            </div>
+            <article>
+              <h1>Marine & Coastal Areas</h1>
+
+            </article>
+          </RouterLink>
+        </div>
+
       </div>
+
     </div>
   </div>
 </template>
 
+
+
+
+
 <style scoped>
-.home {
-  padding: 25px;
-  display: flex;
-  flex-wrap: wrap;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
-  justify-content: center;
 
-  flex-basis: 0;
-  background-color: #fff;
+.bg {
+  background: #f5f7f8;
+  min-width: 100vw;
   min-height: 100vh;
-  height: 100%;
-  width: 100%;
 }
 
-#chart {
-  width: 100%;
-  height: 400px;
+.main {
+
+  background: #f5f7f8;
+  font-family: system-ui;
+  -webkit-font-smoothing: antialiased;
+  padding: 20px 0;
+
 }
 
-#left {
-  left: 0px;
-  width: 50%;
+header {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
-#right {
-  width: 50%;
-  right: 0px;
+.band {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
 }
 
-.awesome {
+@media (min-width: 30em) {
+  .band {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 60em) {
+  .band {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: white;
+  text-decoration: none;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease-in;
+}
+
+.card:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card article {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.card p {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.card span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
   text-transform: uppercase;
-  font-size: 4rem;
-  font-weight: 200;
-  line-height: 1;
-  /* border: 5px solid; */
-  /* padding: 2rem; */
-
-  /* The important extrinsic width */
-  width: 500px;
-  margin-bottom: 50px;
-}
-.center {
-  text-align: center;
+  letter-spacing: 0.05em;
+  margin: 2em 0 0 0;
 }
 
-.awesome[data-sizing="intrinsic"] {
-  width: min-content;
+.card .thumb {
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
 }
 
-.medium-heading {
-  color: #be0a2f;
-  letter-spacing: 5px;
-  font-weight: bolder;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
+@media (min-width: 60em) {
+  /* .item {
+    grid-column: 1 / span 2;
+  } */
 
-.info {
-  font-size: 1.1rem;
-  display: list-item;
-}
+  .item h1 {
+    font-size: 24px;
 
-/*
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    /* border: 5px solid; */
+    /* padding: 2rem; */
+
+    /* The important extrinsic width */
 
 
-Presentational styles 
-*/
-.awesome {
-  --flow-space: 2rem;
+  }
 }
 </style>
