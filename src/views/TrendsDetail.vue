@@ -1,7 +1,11 @@
 <script setup>
 import * as echarts from "echarts";
+import Chart1 from "../components/Chart1.vue";
+import DynamicCharts from "../components/DynamicCharts.vue";
 
 import { ref, onMounted, onUnmounted } from "vue";
+
+
 
 const myChart = ref(0);
 const option = ref({
@@ -91,6 +95,11 @@ onUnmounted(() => {
         </p>
       </div>
     </div>
+
+
+
+
+    <DynamicCharts/>
   </div>
 </template>
 
@@ -126,7 +135,7 @@ onUnmounted(() => {
 
 .awesome {
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 200;
   line-height: 1;
   /* border: 5px solid; */
@@ -136,6 +145,7 @@ onUnmounted(() => {
   width: 500px;
   margin-bottom: 50px;
 }
+
 .center {
   text-align: center;
 }

@@ -98,8 +98,7 @@ import { RouterLink } from "vue-router";
 
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap');
 
 .bg {
   background: #f5f7f8;
@@ -204,8 +203,9 @@ header {
   .item h1 {
     font-size: 24px;
 
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: "Barlow", sans-serif;
+    font-size: 1.3rem;
     font-weight: bold;
 
     /* border: 5px solid; */

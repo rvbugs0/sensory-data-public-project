@@ -11,7 +11,7 @@
       <div class="right">
         <!-- <h1 class="heading">About -->
         <!-- </h1> -->
-        <p class="heading">
+        <p class="heading" style="text-transform: capitalize;">
           Building Adaptive Capacity through Sociotechnical Networks on the
           Texas Gulf Coast.
         </p>
